@@ -22,6 +22,8 @@ net = pickle.load(archivo_lectura)
 archivo_lectura.close()
 
 net.SGD( training_data, 10, 50, 0.5, test_data=test_data)
+#Optimizador ADAM implementado 
+net.compile(optimizer=optimizers.ADAM(learning_rate=0.001))
 
 archivo = open("red_prueba.pkl",'wb')
 pickle.dump(net,archivo)
